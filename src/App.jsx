@@ -51,6 +51,101 @@ const projects = [
   },
 ];
 
+const skills = [
+  {
+    title: "Développement",
+    description: "Développement web, mobile et programmation générale.",
+    items: [
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "C++",
+      "Go",
+      "HTML",
+      "CSS",
+      "React",
+      "React Native",
+    ],
+    icon: "</>",
+  },
+  {
+    title: "Systèmes & Réseaux",
+    description:
+      "Administration de postes, diagnostic et notions de fonctionnement réseau.",
+    items: [
+      "Windows 10/11",
+      "Linux",
+      "TCP/IP",
+      "Configuration de postes",
+      "Diagnostic",
+      "Support utilisateurs",
+      "GLPI",
+    ],
+    icon: ">_",
+  },
+  {
+    title: "Backend & API",
+    description:
+      "Création et consommation d'API pour connecter différents services.",
+    items: [
+      "FastAPI",
+      "Flask",
+      "REST API",
+      "SQLite",
+      "SQLAlchemy",
+      "TMDB API",
+      "Gemini API",
+    ],
+    icon: "{ }",
+  },
+  {
+    title: "DevOps & Cloud",
+    description:
+      "Versionnement, conteneurisation et découverte des environnements cloud.",
+    items: [
+      "Git",
+      "GitHub",
+      "GitLab",
+      "Docker",
+      "LocalStack",
+      "AWS S3",
+      "WSL",
+    ],
+    icon: "∞",
+  },
+  {
+    title: "IoT & Embarqué",
+    description:
+      "Programmation de microcontrôleurs et intégration de composants électroniques.",
+    items: [
+      "ESP32-S3",
+      "PlatformIO",
+      "Arduino",
+      "OLED",
+      "Capteurs",
+      "Servomoteurs",
+      "I2S",
+      "Wi-Fi",
+    ],
+    icon: "◈",
+  },
+  {
+    title: "Intelligence artificielle",
+    description:
+      "Intégration de services d'IA dans des applications et projets connectés.",
+    items: [
+      "Gemini",
+      "IA conversationnelle",
+      "Speech-to-Text",
+      "Text-to-Speech",
+      "Prompting",
+      "Automatisation",
+      "N8N",
+    ],
+    icon: "✦",
+  },
+];
+
 function App() {
   return (
     <div className="min-h-screen bg-[#080b12] text-white">
@@ -173,21 +268,16 @@ function App() {
                   Technologies
                 </span>
 
-                {[
-                  "Python",
-                  "React",
-                  "C++",
-                  "Linux",
-                  "Docker",
-                  "ESP32",
-                ].map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-gray-400"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                {["Python", "React", "C++", "Linux", "Docker", "ESP32"].map(
+                  (tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-gray-400"
+                    >
+                      {tech}
+                    </span>
+                  ),
+                )}
               </div>
             </div>
           </div>
@@ -449,11 +539,108 @@ function App() {
           </div>
         </section>
 
-        {/* COMPÉTENCES - PROCHAINE ÉTAPE */}
+        {/* COMPÉTENCES */}
         <section
           id="competences"
-          className="min-h-screen border-t border-white/10"
-        />
+          className="border-t border-white/10 py-24 md:py-32"
+        >
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mb-16">
+              <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-blue-500">
+                Compétences
+              </p>
+
+              <h2 className="max-w-3xl text-4xl font-black tracking-tight md:text-5xl">
+                Un profil
+                <span className="text-gray-500"> polyvalent.</span>
+              </h2>
+
+              <p className="mt-6 max-w-3xl leading-7 text-gray-400">
+                Ma formation et mes projets m'ont permis de travailler sur
+                plusieurs domaines de l'informatique, du support utilisateur au
+                développement, en passant par le cloud, les API et les systèmes
+                embarqués.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {skills.map((skill) => (
+                <article
+                  key={skill.title}
+                  className="group rounded-2xl border border-white/10 bg-white/[0.025] p-7 transition duration-300 hover:-translate-y-1 hover:border-blue-500/30 hover:bg-blue-500/[0.03]"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-blue-500/20 bg-blue-500/10 font-mono text-lg font-black text-blue-400">
+                    {skill.icon}
+                  </div>
+
+                  <h3 className="mt-6 text-xl font-bold">
+                    {skill.title}
+                  </h3>
+
+                  <p className="mt-3 min-h-[72px] text-sm leading-6 text-gray-500">
+                    {skill.description}
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {skill.items.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-md border border-white/10 bg-black/20 px-3 py-1.5 text-xs text-gray-300 transition group-hover:border-white/15"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            {/* BLOC SUPPORT IT */}
+            <div className="mt-12 overflow-hidden rounded-2xl border border-blue-500/20 bg-blue-500/[0.05]">
+              <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
+                <div className="border-b border-white/10 p-8 lg:border-b-0 lg:border-r">
+                  <p className="text-sm font-bold uppercase tracking-[0.25em] text-blue-400">
+                    Orientation professionnelle
+                  </p>
+
+                  <h3 className="mt-4 text-3xl font-black">
+                    Support informatique
+                  </h3>
+
+                  <p className="mt-4 leading-7 text-gray-400">
+                    Je souhaite mettre mes compétences techniques au service des
+                    utilisateurs et continuer à progresser dans un
+                    environnement professionnel.
+                  </p>
+                </div>
+
+                <div className="grid gap-4 p-8 sm:grid-cols-2">
+                  {[
+                    "Assistance utilisateurs",
+                    "Diagnostic de pannes",
+                    "Installation de postes",
+                    "Windows & Linux",
+                    "Ticketing / GLPI",
+                    "Notions réseaux TCP/IP",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/10 px-4 py-4"
+                    >
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-500/10 text-xs font-bold text-blue-400">
+                        ✓
+                      </span>
+
+                      <span className="text-sm font-medium text-gray-300">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* CONTACT - PROCHAINE ÉTAPE */}
         <section
