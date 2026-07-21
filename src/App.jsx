@@ -1,3 +1,6 @@
+import { Link, Route, Routes } from "react-router";
+import DeskBot from "./pages/DeskBot";
+
 const projects = [
   {
     title: "DeskBot",
@@ -13,6 +16,7 @@ const projects = [
       "IoT",
     ],
     featured: true,
+    path: "/projets/deskbot",
   },
   {
     title: "ETNAFLIX",
@@ -147,6 +151,15 @@ const skills = [
 ];
 
 function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/projets/deskbot" element={<DeskBot />} />
+    </Routes>
+  );
+}
+
+function Home() {
   return (
     <div className="min-h-screen bg-[#080b12] text-white">
       {/* NAVBAR */}
@@ -439,12 +452,18 @@ function App() {
                     ))}
                   </div>
 
-                  <button
-                    type="button"
-                    className="mt-8 font-semibold text-white transition group-hover:text-blue-400"
-                  >
-                    Découvrir le projet →
-                  </button>
+                  {project.path ? (
+                    <Link
+                      to={project.path}
+                      className="mt-8 inline-block font-semibold text-white transition group-hover:text-blue-400"
+                    >
+                      Découvrir le projet →
+                    </Link>
+                  ) : (
+                    <span className="mt-8 inline-block font-semibold text-gray-600">
+                      Détails bientôt disponibles
+                    </span>
+                  )}
                 </article>
               ))}
             </div>
@@ -511,7 +530,6 @@ function App() {
 
           <div className="relative mx-auto max-w-7xl px-6">
             <div className="grid gap-16 lg:grid-cols-[1.1fr_0.9fr]">
-              {/* TEXTE */}
               <div>
                 <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-blue-500">
                   Contact
@@ -533,7 +551,6 @@ function App() {
                   mes projets et mon parcours professionnel.
                 </p>
 
-                {/* ACTIONS */}
                 <div className="mt-10 flex flex-wrap gap-4">
                   <a
                     href="mailto:sangar_m@etna-alternance.net"
@@ -542,17 +559,16 @@ function App() {
                     Envoyer un email
                   </a>
 
-                  <a
-                    href="/cv-mohamed-sangar.pdf"
-                    download
-                    className="rounded-xl border border-white/15 bg-white/5 px-7 py-4 font-semibold transition hover:-translate-y-1 hover:bg-white/10"
+                  <button
+                    type="button"
+                    disabled
+                    className="cursor-not-allowed rounded-xl border border-white/10 bg-white/5 px-7 py-4 font-semibold text-gray-500"
                   >
-                    Télécharger mon CV
-                  </a>
+                    CV bientôt disponible
+                  </button>
                 </div>
               </div>
 
-              {/* INFOS */}
               <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-8">
                 <p className="text-sm font-bold uppercase tracking-[0.25em] text-gray-500">
                   Mes coordonnées
@@ -571,7 +587,9 @@ function App() {
                   </div>
 
                   <div>
-                    <p className="text-sm text-gray-500">Localisation</p>
+                    <p className="text-sm text-gray-500">
+                      Localisation
+                    </p>
 
                     <p className="mt-1 font-semibold text-white">
                       Île-de-France
@@ -589,7 +607,6 @@ function App() {
                   </div>
                 </div>
 
-                {/* RÉSEAUX */}
                 <div className="mt-10 border-t border-white/10 pt-8">
                   <p className="text-sm text-gray-500">
                     Retrouvez-moi également sur
@@ -605,14 +622,13 @@ function App() {
                       GitHub ↗
                     </a>
 
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="rounded-lg border border-white/10 bg-black/20 px-4 py-2 text-sm font-semibold transition hover:border-blue-500/50 hover:text-blue-400"
+                    <button
+                      type="button"
+                      disabled
+                      className="cursor-not-allowed rounded-lg border border-white/10 bg-black/20 px-4 py-2 text-sm font-semibold text-gray-600"
                     >
-                      LinkedIn ↗
-                    </a>
+                      LinkedIn bientôt disponible
+                    </button>
                   </div>
                 </div>
               </div>
