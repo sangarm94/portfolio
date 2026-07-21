@@ -1,5 +1,6 @@
 import { Link, Route, Routes } from "react-router";
 import DeskBot from "./pages/DeskBot";
+import ETNAFlix from "./pages/ETNAFlix";
 
 const projects = [
   {
@@ -24,6 +25,7 @@ const projects = [
     description:
       "Application mobile développée avec React Native permettant de découvrir des films, consulter leurs informations et récupérer les données depuis l'API TMDB.",
     technologies: ["React Native", "Expo", "JavaScript", "TMDB API"],
+    path: "/projets/etnaflix",
   },
   {
     title: "DevOps-as-a-Chat",
@@ -155,6 +157,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/projets/deskbot" element={<DeskBot />} />
+      <Route path="/projets/etnaflix" element={<ETNAFlix />} />
     </Routes>
   );
 }
@@ -497,9 +500,7 @@ function Home() {
                     {skill.icon}
                   </div>
 
-                  <h3 className="mt-6 text-xl font-bold">
-                    {skill.title}
-                  </h3>
+                  <h3 className="mt-6 text-xl font-bold">{skill.title}</h3>
 
                   <p className="mt-3 text-sm leading-6 text-gray-500">
                     {skill.description}
@@ -587,9 +588,7 @@ function Home() {
                   </div>
 
                   <div>
-                    <p className="text-sm text-gray-500">
-                      Localisation
-                    </p>
+                    <p className="text-sm text-gray-500">Localisation</p>
 
                     <p className="mt-1 font-semibold text-white">
                       Île-de-France
@@ -597,9 +596,7 @@ function Home() {
                   </div>
 
                   <div>
-                    <p className="text-sm text-gray-500">
-                      Disponibilité
-                    </p>
+                    <p className="text-sm text-gray-500">Disponibilité</p>
 
                     <p className="mt-1 font-semibold text-white">
                       Alternance informatique
@@ -642,10 +639,7 @@ function Home() {
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-gray-500 md:flex-row md:items-center md:justify-between">
           <p>© 2026 Mohamed Sangar. Tous droits réservés.</p>
 
-          <a
-            href="#accueil"
-            className="transition hover:text-white"
-          >
+          <a href="#accueil" className="transition hover:text-white">
             Retour en haut ↑
           </a>
         </div>
