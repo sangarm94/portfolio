@@ -28,32 +28,11 @@ const projects = [
     path: "/projets/etnaflix",
   },
   {
-    title: "DevOps-as-a-Chat",
-    subtitle: "Assistant DevOps conversationnel",
-    description:
-      "Application permettant d'interagir avec des fonctionnalités DevOps à travers une interface de chat capable de distinguer informations, propositions et actions.",
-    technologies: ["React", "TypeScript", "FastAPI", "Docker", "Git"],
-  },
-  {
     title: "FashionFolio",
     subtitle: "Assistant vestimentaire intelligent",
     description:
       "Application intégrant un dressing numérique, un assistant styliste basé sur l'intelligence artificielle et des fonctionnalités de génération de tenues.",
     technologies: ["React Native", "Python", "FastAPI", "Gemini"],
-  },
-  {
-    title: "Hyrule Castle",
-    subtitle: "Jeu RPG en ligne de commande",
-    description:
-      "Jeu de rôle développé en Go avec système de combat, gestion des personnages, statistiques, soins, ennemis et affrontement contre un boss.",
-    technologies: ["Go", "JSON"],
-  },
-  {
-    title: "Cloud Photo",
-    subtitle: "Application Cloud avec stockage S3",
-    description:
-      "Application permettant d'envoyer et stocker des images dans un environnement AWS simulé à l'aide de LocalStack, Flask et Docker.",
-    technologies: ["Python", "Flask", "AWS S3", "LocalStack", "Docker"],
   },
 ];
 
