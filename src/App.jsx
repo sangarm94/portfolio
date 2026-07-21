@@ -1,6 +1,7 @@
 import { Link, Route, Routes } from "react-router";
 import DeskBot from "./pages/DeskBot";
 import ETNAFlix from "./pages/ETNAFlix";
+import FashionFolio from "./pages/FashionFolio";
 
 const projects = [
   {
@@ -31,8 +32,15 @@ const projects = [
     title: "FashionFolio",
     subtitle: "Assistant vestimentaire intelligent",
     description:
-      "Application intégrant un dressing numérique, un assistant styliste basé sur l'intelligence artificielle et des fonctionnalités de génération de tenues.",
-    technologies: ["React Native", "Python", "FastAPI", "Gemini"],
+      "Application mobile combinant dressing numérique, assistant styliste basé sur l'intelligence artificielle et génération de tenues personnalisées.",
+    technologies: [
+      "React Native",
+      "Python",
+      "FastAPI",
+      "Gemini",
+      "SQLite",
+    ],
+    path: "/projets/fashionfolio",
   },
 ];
 
@@ -135,8 +143,21 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/projets/deskbot" element={<DeskBot />} />
-      <Route path="/projets/etnaflix" element={<ETNAFlix />} />
+
+      <Route
+        path="/projets/deskbot"
+        element={<DeskBot />}
+      />
+
+      <Route
+        path="/projets/etnaflix"
+        element={<ETNAFlix />}
+      />
+
+      <Route
+        path="/projets/fashionfolio"
+        element={<FashionFolio />}
+      />
     </Routes>
   );
 }
@@ -147,7 +168,10 @@ function Home() {
       {/* NAVBAR */}
       <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#080b12]/80 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-          <a href="#accueil" className="text-xl font-black tracking-tight">
+          <a
+            href="#accueil"
+            className="text-xl font-black tracking-tight"
+          >
             MS<span className="text-blue-500">.</span>
           </a>
 
@@ -224,7 +248,10 @@ function Home() {
 
               <h1 className="text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
                 Mohamed
-                <span className="block text-gray-400">Sangar.</span>
+
+                <span className="block text-gray-400">
+                  Sangar.
+                </span>
               </h1>
 
               <h2 className="mt-8 text-xl font-medium text-gray-300 md:text-2xl">
@@ -263,16 +290,21 @@ function Home() {
                   Technologies
                 </span>
 
-                {["Python", "React", "C++", "Linux", "Docker", "ESP32"].map(
-                  (tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-gray-400"
-                    >
-                      {tech}
-                    </span>
-                  ),
-                )}
+                {[
+                  "Python",
+                  "React",
+                  "C++",
+                  "Linux",
+                  "Docker",
+                  "ESP32",
+                ].map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-gray-400"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
@@ -291,7 +323,10 @@ function Home() {
 
               <h2 className="max-w-3xl text-4xl font-black tracking-tight md:text-5xl">
                 De la technique aux projets
-                <span className="text-gray-500"> concrets.</span>
+                <span className="text-gray-500">
+                  {" "}
+                  concrets.
+                </span>
               </h2>
             </div>
 
@@ -299,8 +334,11 @@ function Home() {
               <div>
                 <p className="text-lg leading-8 text-gray-300">
                   Actuellement étudiant en informatique à
-                  <span className="font-semibold text-white"> l'ETNA</span>, je
-                  développe mes compétences à travers des projets mêlant
+                  <span className="font-semibold text-white">
+                    {" "}
+                    l'ETNA
+                  </span>
+                  , je développe mes compétences à travers des projets mêlant
                   développement logiciel, systèmes, réseaux, IoT et
                   intelligence artificielle.
                 </p>
@@ -338,7 +376,9 @@ function Home() {
                       Formation informatique
                     </h3>
 
-                    <p className="mt-1 text-gray-400">ETNA</p>
+                    <p className="mt-1 text-gray-400">
+                      ETNA
+                    </p>
                   </div>
 
                   <div className="relative pb-12">
@@ -393,6 +433,12 @@ function Home() {
                 Mes projets
                 <span className="text-gray-500">.</span>
               </h2>
+
+              <p className="mt-5 max-w-2xl leading-7 text-gray-400">
+                Une sélection de projets mettant en avant mes compétences en
+                développement mobile, intelligence artificielle, IoT et
+                développement backend.
+              </p>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
@@ -434,18 +480,12 @@ function Home() {
                     ))}
                   </div>
 
-                  {project.path ? (
-                    <Link
-                      to={project.path}
-                      className="mt-8 inline-block font-semibold text-white transition group-hover:text-blue-400"
-                    >
-                      Découvrir le projet →
-                    </Link>
-                  ) : (
-                    <span className="mt-8 inline-block font-semibold text-gray-600">
-                      Détails bientôt disponibles
-                    </span>
-                  )}
+                  <Link
+                    to={project.path}
+                    className="mt-8 inline-block font-semibold text-white transition group-hover:text-blue-400"
+                  >
+                    Découvrir le projet →
+                  </Link>
                 </article>
               ))}
             </div>
@@ -465,7 +505,10 @@ function Home() {
 
               <h2 className="text-4xl font-black tracking-tight md:text-5xl">
                 Un profil
-                <span className="text-gray-500"> polyvalent.</span>
+                <span className="text-gray-500">
+                  {" "}
+                  polyvalent.
+                </span>
               </h2>
             </div>
 
@@ -479,7 +522,9 @@ function Home() {
                     {skill.icon}
                   </div>
 
-                  <h3 className="mt-6 text-xl font-bold">{skill.title}</h3>
+                  <h3 className="mt-6 text-xl font-bold">
+                    {skill.title}
+                  </h3>
 
                   <p className="mt-3 text-sm leading-6 text-gray-500">
                     {skill.description}
@@ -517,7 +562,10 @@ function Home() {
 
                 <h2 className="max-w-3xl text-4xl font-black tracking-tight md:text-5xl">
                   Construisons quelque chose
-                  <span className="text-gray-500"> ensemble.</span>
+                  <span className="text-gray-500">
+                    {" "}
+                    ensemble.
+                  </span>
                 </h2>
 
                 <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-400">
@@ -556,7 +604,9 @@ function Home() {
 
                 <div className="mt-8 space-y-6">
                   <div>
-                    <p className="text-sm text-gray-500">Email</p>
+                    <p className="text-sm text-gray-500">
+                      Email
+                    </p>
 
                     <a
                       href="mailto:sangar_m@etna-alternance.net"
@@ -567,7 +617,9 @@ function Home() {
                   </div>
 
                   <div>
-                    <p className="text-sm text-gray-500">Localisation</p>
+                    <p className="text-sm text-gray-500">
+                      Localisation
+                    </p>
 
                     <p className="mt-1 font-semibold text-white">
                       Île-de-France
@@ -575,7 +627,9 @@ function Home() {
                   </div>
 
                   <div>
-                    <p className="text-sm text-gray-500">Disponibilité</p>
+                    <p className="text-sm text-gray-500">
+                      Disponibilité
+                    </p>
 
                     <p className="mt-1 font-semibold text-white">
                       Alternance informatique
@@ -616,9 +670,14 @@ function Home() {
       {/* FOOTER */}
       <footer className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-gray-500 md:flex-row md:items-center md:justify-between">
-          <p>© 2026 Mohamed Sangar. Tous droits réservés.</p>
+          <p>
+            © 2026 Mohamed Sangar. Tous droits réservés.
+          </p>
 
-          <a href="#accueil" className="transition hover:text-white">
+          <a
+            href="#accueil"
+            className="transition hover:text-white"
+          >
             Retour en haut ↑
           </a>
         </div>
