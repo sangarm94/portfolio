@@ -201,10 +201,162 @@ function App() {
 
         {/* PLACEHOLDERS POUR LES PROCHAINES SECTIONS */}
 
-        <section
-          id="apropos"
-          className="min-h-screen border-t border-white/10"
-        />
+        {/* À PROPOS */}
+<section
+  id="apropos"
+  className="border-t border-white/10 py-24 md:py-32"
+>
+  <div className="mx-auto max-w-7xl px-6">
+
+    {/* EN-TÊTE */}
+    <div className="mb-16">
+      <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-blue-500">
+        À propos
+      </p>
+
+      <h2 className="max-w-3xl text-4xl font-black tracking-tight md:text-5xl">
+        De la technique aux projets
+        <span className="text-gray-500"> concrets.</span>
+      </h2>
+    </div>
+
+    <div className="grid gap-16 lg:grid-cols-2">
+
+      {/* PRÉSENTATION */}
+      <div>
+        <p className="text-lg leading-8 text-gray-300">
+          Actuellement étudiant en informatique à
+          <span className="font-semibold text-white"> l'ETNA</span>,
+          je développe mes compétences à travers des projets mêlant
+          développement logiciel, systèmes, réseaux, IoT et
+          intelligence artificielle.
+        </p>
+
+        <p className="mt-6 leading-8 text-gray-400">
+          Mon expérience en tant qu'assistant technicien informatique
+          m'a également permis d'évoluer dans un environnement
+          professionnel, notamment à travers l'assistance aux utilisateurs,
+          l'installation et la configuration de postes informatiques ainsi
+          que la résolution d'incidents techniques.
+        </p>
+
+        <p className="mt-6 leading-8 text-gray-400">
+          Je souhaite aujourd'hui poursuivre ma formation en alternance
+          afin de renforcer mes compétences techniques, gagner en
+          expérience et contribuer concrètement aux besoins informatiques
+          d'une entreprise.
+        </p>
+
+        {/* CHIFFRES */}
+        <div className="mt-12 grid grid-cols-3 gap-4">
+
+          <div className="border-l-2 border-blue-500 pl-4">
+            <p className="text-3xl font-black">6+</p>
+            <p className="mt-1 text-sm text-gray-500">
+              Projets
+            </p>
+          </div>
+
+          <div className="border-l-2 border-blue-500 pl-4">
+            <p className="text-3xl font-black">10+</p>
+            <p className="mt-1 text-sm text-gray-500">
+              Technologies
+            </p>
+          </div>
+
+          <div className="border-l-2 border-blue-500 pl-4">
+            <p className="text-3xl font-black">ETNA</p>
+            <p className="mt-1 text-sm text-gray-500">
+              Informatique
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      {/* PARCOURS */}
+      <div>
+
+        <p className="mb-8 text-sm font-bold uppercase tracking-[0.25em] text-gray-500">
+          Mon parcours
+        </p>
+
+        <div className="relative border-l border-white/10 pl-8">
+
+          {/* ETNA */}
+          <div className="relative pb-12">
+
+            <span className="absolute -left-[37px] top-1 h-4 w-4 rounded-full border-4 border-[#080b12] bg-blue-500" />
+
+            <p className="text-sm font-semibold text-blue-400">
+              Aujourd'hui
+            </p>
+
+            <h3 className="mt-2 text-xl font-bold">
+              Formation informatique
+            </h3>
+
+            <p className="mt-1 text-gray-400">
+              ETNA
+            </p>
+
+            <p className="mt-3 text-sm leading-6 text-gray-500">
+              Développement, systèmes, réseaux, DevOps,
+              projets IoT et intelligence artificielle.
+            </p>
+
+          </div>
+
+          {/* EXPÉRIENCE */}
+          <div className="relative pb-12">
+
+            <span className="absolute -left-[37px] top-1 h-4 w-4 rounded-full border-4 border-[#080b12] bg-gray-600" />
+
+            <p className="text-sm font-semibold text-gray-500">
+              Expérience professionnelle
+            </p>
+
+            <h3 className="mt-2 text-xl font-bold">
+              Assistant technicien informatique
+            </h3>
+
+            <p className="mt-1 text-gray-400">
+              Mairie de Boissy-Saint-Léger
+            </p>
+
+            <p className="mt-3 text-sm leading-6 text-gray-500">
+              Support utilisateurs, installation et configuration
+              de postes, suivi des incidents et utilisation d'un
+              système de ticketing.
+            </p>
+
+          </div>
+
+          {/* BAC */}
+          <div className="relative">
+
+            <span className="absolute -left-[37px] top-1 h-4 w-4 rounded-full border-4 border-[#080b12] bg-gray-700" />
+
+            <p className="text-sm font-semibold text-gray-500">
+              Formation initiale
+            </p>
+
+            <h3 className="mt-2 text-xl font-bold">
+              Baccalauréat STMG
+            </h3>
+
+            <p className="mt-1 text-gray-400">
+              Option Gestion-Finance
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
         <section
           id="projets"
