@@ -1,20 +1,66 @@
+const projects = [
+  {
+    title: "DeskBot",
+    subtitle: "Robot assistant intelligent",
+    description:
+      "Conception d'un robot connecté basé sur un ESP32-S3, capable d'interagir avec l'utilisateur grâce à l'intelligence artificielle, la reconnaissance vocale et différents composants IoT.",
+    technologies: [
+      "ESP32-S3",
+      "C++",
+      "PlatformIO",
+      "FastAPI",
+      "Gemini",
+      "IoT",
+    ],
+    featured: true,
+  },
+  {
+    title: "ETNAFLIX",
+    subtitle: "Application mobile de découverte de films",
+    description:
+      "Application mobile développée avec React Native permettant de découvrir des films, consulter leurs informations et récupérer les données depuis l'API TMDB.",
+    technologies: ["React Native", "Expo", "JavaScript", "TMDB API"],
+  },
+  {
+    title: "DevOps-as-a-Chat",
+    subtitle: "Assistant DevOps conversationnel",
+    description:
+      "Application permettant d'interagir avec des fonctionnalités DevOps à travers une interface de chat capable de distinguer informations, propositions et actions.",
+    technologies: ["React", "TypeScript", "FastAPI", "Docker", "Git"],
+  },
+  {
+    title: "FashionFolio",
+    subtitle: "Assistant vestimentaire intelligent",
+    description:
+      "Application intégrant un dressing numérique, un assistant styliste basé sur l'intelligence artificielle et des fonctionnalités de génération de tenues.",
+    technologies: ["React Native", "Python", "FastAPI", "Gemini"],
+  },
+  {
+    title: "Hyrule Castle",
+    subtitle: "Jeu RPG en ligne de commande",
+    description:
+      "Jeu de rôle développé en Go avec système de combat, gestion des personnages, statistiques, soins, ennemis et affrontement contre un boss.",
+    technologies: ["Go", "JSON"],
+  },
+  {
+    title: "Cloud Photo",
+    subtitle: "Application Cloud avec stockage S3",
+    description:
+      "Application permettant d'envoyer et stocker des images dans un environnement AWS simulé à l'aide de LocalStack, Flask et Docker.",
+    technologies: ["Python", "Flask", "AWS S3", "LocalStack", "Docker"],
+  },
+];
+
 function App() {
   return (
     <div className="min-h-screen bg-[#080b12] text-white">
-
       {/* NAVBAR */}
       <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#080b12]/80 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-
-          {/* LOGO */}
-          <a
-            href="#accueil"
-            className="text-xl font-black tracking-tight"
-          >
+          <a href="#accueil" className="text-xl font-black tracking-tight">
             MS<span className="text-blue-500">.</span>
           </a>
 
-          {/* NAVIGATION */}
           <div className="hidden items-center gap-8 md:flex">
             <a
               href="#accueil"
@@ -52,86 +98,60 @@ function App() {
             </a>
           </div>
 
-          {/* BOUTON CONTACT */}
           <a
             href="#contact"
             className="rounded-lg border border-white/20 px-4 py-2 text-sm font-semibold transition hover:border-blue-500 hover:text-blue-400"
           >
             Me contacter
           </a>
-
         </nav>
       </header>
 
-
-      {/* HERO */}
       <main>
+        {/* ACCUEIL */}
         <section
           id="accueil"
           className="relative flex min-h-screen items-center overflow-hidden"
         >
-
-          {/* EFFET DE FOND */}
           <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/10 blur-[120px]" />
 
           <div className="relative mx-auto w-full max-w-7xl px-6 pt-24">
-
             <div className="max-w-4xl">
-
-              {/* DISPONIBILITÉ */}
               <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2">
-
                 <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
                 </span>
 
                 <span className="text-sm text-gray-300">
                   À la recherche d'une alternance
                 </span>
-
               </div>
 
-
-              {/* TITRE */}
               <p className="mb-5 text-sm font-bold uppercase tracking-[0.35em] text-blue-500">
                 Portfolio
               </p>
 
               <h1 className="text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-
                 Mohamed
-
-                <span className="block text-gray-400">
-                  SANGARE
-                </span>
-
+                <span className="block text-gray-400">Sangar.</span>
               </h1>
 
-
-              {/* DESCRIPTION */}
               <h2 className="mt-8 text-xl font-medium text-gray-300 md:text-2xl">
                 Étudiant en informatique à l'ETNA
               </h2>
 
               <p className="mt-5 max-w-2xl text-base leading-8 text-gray-400 md:text-lg">
-
-                Je conçois des projets mêlant développement,
-                systèmes, IoT et intelligence artificielle.
-
-                Je recherche actuellement une alternance en tant que
-
+                Je conçois des projets mêlant développement, systèmes, IoT et
+                intelligence artificielle. Je recherche actuellement une
+                alternance en tant que
                 <span className="font-semibold text-white">
-                  {" "}technicien support informatique.
+                  {" "}
+                  technicien support informatique.
                 </span>
-
               </p>
 
-
-              {/* BOUTONS */}
               <div className="mt-10 flex flex-wrap gap-4">
-
                 <a
                   href="#projets"
                   className="rounded-xl bg-blue-600 px-7 py-4 font-semibold transition duration-300 hover:-translate-y-1 hover:bg-blue-500"
@@ -146,13 +166,9 @@ function App() {
                 >
                   Me contacter
                 </a>
-
               </div>
 
-
-              {/* TECHNOLOGIES */}
               <div className="mt-14 flex flex-wrap items-center gap-3">
-
                 <span className="mr-2 text-xs font-semibold uppercase tracking-widest text-gray-600">
                   Technologies
                 </span>
@@ -165,24 +181,17 @@ function App() {
                   "Docker",
                   "ESP32",
                 ].map((tech) => (
-
                   <span
                     key={tech}
                     className="rounded-md border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-gray-400"
                   >
                     {tech}
                   </span>
-
                 ))}
-
               </div>
-
             </div>
-
           </div>
 
-
-          {/* SCROLL */}
           <a
             href="#apropos"
             className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-gray-600 transition hover:text-white md:flex"
@@ -190,191 +199,268 @@ function App() {
             <span className="text-xs uppercase tracking-[0.25em]">
               Découvrir
             </span>
-
-            <span className="text-xl">
-              ↓
-            </span>
+            <span className="text-xl">↓</span>
           </a>
-
         </section>
 
-
-        {/* PLACEHOLDERS POUR LES PROCHAINES SECTIONS */}
-
         {/* À PROPOS */}
-<section
-  id="apropos"
-  className="border-t border-white/10 py-24 md:py-32"
->
-  <div className="mx-auto max-w-7xl px-6">
+        <section
+          id="apropos"
+          className="border-t border-white/10 py-24 md:py-32"
+        >
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mb-16">
+              <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-blue-500">
+                À propos
+              </p>
 
-    {/* EN-TÊTE */}
-    <div className="mb-16">
-      <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-blue-500">
-        À propos
-      </p>
+              <h2 className="max-w-3xl text-4xl font-black tracking-tight md:text-5xl">
+                De la technique aux projets
+                <span className="text-gray-500"> concrets.</span>
+              </h2>
+            </div>
 
-      <h2 className="max-w-3xl text-4xl font-black tracking-tight md:text-5xl">
-        De la technique aux projets
-        <span className="text-gray-500"> concrets.</span>
-      </h2>
-    </div>
+            <div className="grid gap-16 lg:grid-cols-2">
+              <div>
+                <p className="text-lg leading-8 text-gray-300">
+                  Actuellement étudiant en informatique à
+                  <span className="font-semibold text-white"> l'ETNA</span>, je
+                  développe mes compétences à travers des projets mêlant
+                  développement logiciel, systèmes, réseaux, IoT et
+                  intelligence artificielle.
+                </p>
 
-    <div className="grid gap-16 lg:grid-cols-2">
+                <p className="mt-6 leading-8 text-gray-400">
+                  Mon expérience en tant qu'assistant technicien informatique
+                  m'a également permis d'évoluer dans un environnement
+                  professionnel, notamment à travers l'assistance aux
+                  utilisateurs, l'installation et la configuration de postes
+                  informatiques ainsi que la résolution d'incidents techniques.
+                </p>
 
-      {/* PRÉSENTATION */}
-      <div>
-        <p className="text-lg leading-8 text-gray-300">
-          Actuellement étudiant en informatique à
-          <span className="font-semibold text-white"> l'ETNA</span>,
-          je développe mes compétences à travers des projets mêlant
-          développement logiciel, systèmes, réseaux, IoT et
-          intelligence artificielle.
-        </p>
+                <p className="mt-6 leading-8 text-gray-400">
+                  Je souhaite aujourd'hui poursuivre ma formation en alternance
+                  afin de renforcer mes compétences techniques, gagner en
+                  expérience et contribuer concrètement aux besoins
+                  informatiques d'une entreprise.
+                </p>
 
-        <p className="mt-6 leading-8 text-gray-400">
-          Mon expérience en tant qu'assistant technicien informatique
-          m'a également permis d'évoluer dans un environnement
-          professionnel, notamment à travers l'assistance aux utilisateurs,
-          l'installation et la configuration de postes informatiques ainsi
-          que la résolution d'incidents techniques.
-        </p>
+                <div className="mt-12 grid grid-cols-3 gap-4">
+                  <div className="border-l-2 border-blue-500 pl-4">
+                    <p className="text-3xl font-black">6+</p>
+                    <p className="mt-1 text-sm text-gray-500">Projets</p>
+                  </div>
 
-        <p className="mt-6 leading-8 text-gray-400">
-          Je souhaite aujourd'hui poursuivre ma formation en alternance
-          afin de renforcer mes compétences techniques, gagner en
-          expérience et contribuer concrètement aux besoins informatiques
-          d'une entreprise.
-        </p>
+                  <div className="border-l-2 border-blue-500 pl-4">
+                    <p className="text-3xl font-black">10+</p>
+                    <p className="mt-1 text-sm text-gray-500">Technologies</p>
+                  </div>
 
-        {/* CHIFFRES */}
-        <div className="mt-12 grid grid-cols-3 gap-4">
+                  <div className="border-l-2 border-blue-500 pl-4">
+                    <p className="text-3xl font-black">ETNA</p>
+                    <p className="mt-1 text-sm text-gray-500">Informatique</p>
+                  </div>
+                </div>
+              </div>
 
-          <div className="border-l-2 border-blue-500 pl-4">
-            <p className="text-3xl font-black">6+</p>
-            <p className="mt-1 text-sm text-gray-500">
-              Projets
-            </p>
+              <div>
+                <p className="mb-8 text-sm font-bold uppercase tracking-[0.25em] text-gray-500">
+                  Mon parcours
+                </p>
+
+                <div className="relative border-l border-white/10 pl-8">
+                  <div className="relative pb-12">
+                    <span className="absolute -left-[37px] top-1 h-4 w-4 rounded-full border-4 border-[#080b12] bg-blue-500" />
+
+                    <p className="text-sm font-semibold text-blue-400">
+                      Aujourd'hui
+                    </p>
+
+                    <h3 className="mt-2 text-xl font-bold">
+                      Formation informatique
+                    </h3>
+
+                    <p className="mt-1 text-gray-400">ETNA</p>
+
+                    <p className="mt-3 text-sm leading-6 text-gray-500">
+                      Développement, systèmes, réseaux, DevOps, projets IoT et
+                      intelligence artificielle.
+                    </p>
+                  </div>
+
+                  <div className="relative pb-12">
+                    <span className="absolute -left-[37px] top-1 h-4 w-4 rounded-full border-4 border-[#080b12] bg-gray-600" />
+
+                    <p className="text-sm font-semibold text-gray-500">
+                      Expérience professionnelle
+                    </p>
+
+                    <h3 className="mt-2 text-xl font-bold">
+                      Assistant technicien informatique
+                    </h3>
+
+                    <p className="mt-1 text-gray-400">
+                      Mairie de Boissy-Saint-Léger
+                    </p>
+
+                    <p className="mt-3 text-sm leading-6 text-gray-500">
+                      Support utilisateurs, installation et configuration de
+                      postes, suivi des incidents et utilisation d'un système de
+                      ticketing.
+                    </p>
+                  </div>
+
+                  <div className="relative">
+                    <span className="absolute -left-[37px] top-1 h-4 w-4 rounded-full border-4 border-[#080b12] bg-gray-700" />
+
+                    <p className="text-sm font-semibold text-gray-500">
+                      Formation initiale
+                    </p>
+
+                    <h3 className="mt-2 text-xl font-bold">
+                      Baccalauréat STMG
+                    </h3>
+
+                    <p className="mt-1 text-gray-400">
+                      Option Gestion-Finance
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </section>
 
-          <div className="border-l-2 border-blue-500 pl-4">
-            <p className="text-3xl font-black">10+</p>
-            <p className="mt-1 text-sm text-gray-500">
-              Technologies
-            </p>
-          </div>
-
-          <div className="border-l-2 border-blue-500 pl-4">
-            <p className="text-3xl font-black">ETNA</p>
-            <p className="mt-1 text-sm text-gray-500">
-              Informatique
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-      {/* PARCOURS */}
-      <div>
-
-        <p className="mb-8 text-sm font-bold uppercase tracking-[0.25em] text-gray-500">
-          Mon parcours
-        </p>
-
-        <div className="relative border-l border-white/10 pl-8">
-
-          {/* ETNA */}
-          <div className="relative pb-12">
-
-            <span className="absolute -left-[37px] top-1 h-4 w-4 rounded-full border-4 border-[#080b12] bg-blue-500" />
-
-            <p className="text-sm font-semibold text-blue-400">
-              Aujourd'hui
-            </p>
-
-            <h3 className="mt-2 text-xl font-bold">
-              Formation informatique
-            </h3>
-
-            <p className="mt-1 text-gray-400">
-              ETNA
-            </p>
-
-            <p className="mt-3 text-sm leading-6 text-gray-500">
-              Développement, systèmes, réseaux, DevOps,
-              projets IoT et intelligence artificielle.
-            </p>
-
-          </div>
-
-          {/* EXPÉRIENCE */}
-          <div className="relative pb-12">
-
-            <span className="absolute -left-[37px] top-1 h-4 w-4 rounded-full border-4 border-[#080b12] bg-gray-600" />
-
-            <p className="text-sm font-semibold text-gray-500">
-              Expérience professionnelle
-            </p>
-
-            <h3 className="mt-2 text-xl font-bold">
-              Assistant technicien informatique
-            </h3>
-
-            <p className="mt-1 text-gray-400">
-              Mairie de Boissy-Saint-Léger
-            </p>
-
-            <p className="mt-3 text-sm leading-6 text-gray-500">
-              Support utilisateurs, installation et configuration
-              de postes, suivi des incidents et utilisation d'un
-              système de ticketing.
-            </p>
-
-          </div>
-
-          {/* BAC */}
-          <div className="relative">
-
-            <span className="absolute -left-[37px] top-1 h-4 w-4 rounded-full border-4 border-[#080b12] bg-gray-700" />
-
-            <p className="text-sm font-semibold text-gray-500">
-              Formation initiale
-            </p>
-
-            <h3 className="mt-2 text-xl font-bold">
-              Baccalauréat STMG
-            </h3>
-
-            <p className="mt-1 text-gray-400">
-              Option Gestion-Finance
-            </p>
-
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+        {/* PROJETS */}
         <section
           id="projets"
-          className="min-h-screen border-t border-white/10"
-        />
+          className="border-t border-white/10 bg-white/[0.015] py-24 md:py-32"
+        >
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mb-16">
+              <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-blue-500">
+                Réalisations
+              </p>
 
+              <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+                <div>
+                  <h2 className="text-4xl font-black tracking-tight md:text-5xl">
+                    Mes projets
+                    <span className="text-gray-500">.</span>
+                  </h2>
+
+                  <p className="mt-5 max-w-2xl leading-7 text-gray-400">
+                    Une sélection de projets réalisés durant ma formation,
+                    couvrant le développement logiciel, le mobile, le cloud,
+                    l'IoT et l'intelligence artificielle.
+                  </p>
+                </div>
+
+                <p className="text-sm text-gray-500">
+                  {projects.length} projets présentés
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              {projects.map((project) => (
+                <article
+                  key={project.title}
+                  className={`group relative overflow-hidden rounded-2xl border p-7 transition duration-300 hover:-translate-y-1 ${
+                    project.featured
+                      ? "border-blue-500/40 bg-blue-500/[0.06] md:col-span-2"
+                      : "border-white/10 bg-white/[0.025] hover:border-white/20"
+                  }`}
+                >
+                  {project.featured && (
+                    <div className="mb-6 inline-flex rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 text-xs font-semibold text-blue-400">
+                      Projet mis en avant
+                    </div>
+                  )}
+
+                  <div
+                    className={
+                      project.featured
+                        ? "grid gap-10 lg:grid-cols-[1.3fr_0.7fr]"
+                        : ""
+                    }
+                  >
+                    <div>
+                      <p className="text-sm font-medium text-blue-400">
+                        {project.subtitle}
+                      </p>
+
+                      <h3
+                        className={`mt-2 font-black ${
+                          project.featured
+                            ? "text-3xl md:text-4xl"
+                            : "text-2xl"
+                        }`}
+                      >
+                        {project.title}
+                      </h3>
+
+                      <p className="mt-5 max-w-2xl leading-7 text-gray-400">
+                        {project.description}
+                      </p>
+
+                      <div className="mt-7 flex flex-wrap gap-2">
+                        {project.technologies.map((technology) => (
+                          <span
+                            key={technology}
+                            className="rounded-md border border-white/10 bg-black/20 px-3 py-1.5 text-xs text-gray-300"
+                          >
+                            {technology}
+                          </span>
+                        ))}
+                      </div>
+
+                      <button
+                        type="button"
+                        className="mt-8 flex items-center gap-2 font-semibold text-white transition group-hover:text-blue-400"
+                      >
+                        Découvrir le projet
+                        <span className="transition-transform group-hover:translate-x-1">
+                          →
+                        </span>
+                      </button>
+                    </div>
+
+                    {project.featured && (
+                      <div className="flex min-h-[250px] items-center justify-center rounded-xl border border-white/10 bg-black/20">
+                        <div className="text-center">
+                          <div className="text-6xl">🤖</div>
+
+                          <p className="mt-5 text-sm font-semibold text-gray-300">
+                            ESP32 + IA + IoT
+                          </p>
+
+                          <p className="mt-2 max-w-xs text-sm leading-6 text-gray-500">
+                            Interaction vocale, écran OLED, capteurs,
+                            servomoteur et backend intelligent.
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* COMPÉTENCES - PROCHAINE ÉTAPE */}
         <section
           id="competences"
           className="min-h-screen border-t border-white/10"
         />
 
+        {/* CONTACT - PROCHAINE ÉTAPE */}
         <section
           id="contact"
           className="min-h-screen border-t border-white/10"
         />
-
       </main>
-
     </div>
   );
 }
