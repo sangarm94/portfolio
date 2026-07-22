@@ -333,7 +333,7 @@ function Home() {
               <h1 className="hero-animation hero-delay-3 text-5xl font-black leading-[1.02] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
                 Mohamed
                 <span className="block text-gray-400">
-                  Sangar.
+                  SANGARE.
                 </span>
               </h1>
 
@@ -709,7 +709,7 @@ function Home() {
 
                     <ContactInfo
                       label="Disponibilité"
-                      value="Alternance informatique"
+                      value="Dès maintenant"
                     />
                   </div>
 
@@ -747,7 +747,7 @@ function Home() {
       <footer className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-gray-500 sm:px-6 md:flex-row md:items-center md:justify-between">
           <p>
-            © 2026 Mohamed Sangar. Tous droits réservés.
+            © 2026 Mohamed SANGARE. Tous droits réservés.
           </p>
 
           <a
