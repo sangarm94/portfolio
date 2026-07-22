@@ -151,8 +151,17 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/projets/deskbot" element={<DeskBot />} />
-      <Route path="/projets/etnaflix" element={<ETNAFlix />} />
+
+      <Route
+        path="/projets/deskbot"
+        element={<DeskBot />}
+      />
+
+      <Route
+        path="/projets/etnaflix"
+        element={<ETNAFlix />}
+      />
+
       <Route
         path="/projets/fashionfolio"
         element={<FashionFolio />}
@@ -174,6 +183,7 @@ function Home() {
       <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#080b12]/90 backdrop-blur-xl">
         <nav className="mx-auto max-w-7xl px-5 sm:px-6">
           <div className="flex h-[76px] items-center justify-between">
+            {/* LOGO */}
             <a
               href="#accueil"
               onClick={closeMenu}
@@ -182,6 +192,7 @@ function Home() {
               MS<span className="text-blue-500">.</span>
             </a>
 
+            {/* NAVIGATION DESKTOP */}
             <div className="hidden items-center gap-8 md:flex">
               <DesktopNavLink href="#accueil">
                 Accueil
@@ -204,6 +215,7 @@ function Home() {
               </DesktopNavLink>
             </div>
 
+            {/* CONTACT DESKTOP */}
             <a
               href="#contact"
               className="hidden rounded-lg border border-white/20 px-4 py-2 text-sm font-semibold transition duration-300 hover:-translate-y-0.5 hover:border-blue-500 hover:text-blue-400 md:block"
@@ -211,6 +223,7 @@ function Home() {
               Me contacter
             </a>
 
+            {/* MENU HAMBURGER */}
             <button
               type="button"
               onClick={() =>
@@ -250,6 +263,7 @@ function Home() {
             </button>
           </div>
 
+          {/* MENU MOBILE */}
           <div
             className={`overflow-hidden transition-all duration-300 md:hidden ${
               menuOpen
@@ -315,9 +329,11 @@ function Home() {
 
           <div className="relative mx-auto w-full max-w-7xl px-5 pb-16 pt-32 sm:px-6 md:pb-0 md:pt-24">
             <div className="max-w-4xl">
+              {/* DISPONIBILITÉ */}
               <div className="hero-animation hero-delay-1 mb-7 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-3.5 py-2 sm:mb-8 sm:px-4">
                 <span className="relative flex h-2 w-2 shrink-0">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
                 </span>
 
@@ -332,6 +348,7 @@ function Home() {
 
               <h1 className="hero-animation hero-delay-3 text-5xl font-black leading-[1.02] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
                 Mohamed
+
                 <span className="block text-gray-400">
                   SANGARE.
                 </span>
@@ -351,6 +368,7 @@ function Home() {
                 </span>
               </p>
 
+              {/* BOUTONS */}
               <div className="hero-animation hero-delay-6 mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
                 <a
                   href="#projets"
@@ -368,6 +386,7 @@ function Home() {
                 </a>
               </div>
 
+              {/* TECHNOLOGIES */}
               <div className="hero-animation hero-delay-7 mt-10 flex flex-wrap items-center gap-2 sm:mt-14 sm:gap-3">
                 <span className="mb-1 mr-2 w-full text-xs font-semibold uppercase tracking-widest text-gray-600 sm:mb-0 sm:w-auto">
                   Technologies
@@ -678,17 +697,18 @@ function Home() {
                       Envoyer un email
                     </a>
 
-                    <button
-                      type="button"
-                      disabled
-                      className="w-full cursor-not-allowed rounded-xl border border-white/10 bg-white/5 px-6 py-4 font-semibold text-gray-500 sm:w-auto sm:px-7"
+                    <a
+                      href="/CV-Mohamed-SANGARE.pdf"
+                      download="CV-Mohamed-SANGARE.pdf"
+                      className="flex w-full items-center justify-center rounded-xl border border-white/15 bg-white/5 px-6 py-4 font-semibold transition duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:bg-white/10 sm:w-auto sm:px-7"
                     >
-                      CV bientôt disponible
-                    </button>
+                      Télécharger mon CV ↓
+                    </a>
                   </div>
                 </div>
               </Reveal>
 
+              {/* COORDONNÉES */}
               <Reveal delay={150}>
                 <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5 sm:p-8">
                   <p className="text-xs font-bold uppercase tracking-[0.25em] text-gray-500 sm:text-sm">
@@ -728,13 +748,14 @@ function Home() {
                         GitHub ↗
                       </a>
 
-                      <button
-                        type="button"
-                        disabled
-                        className="cursor-not-allowed rounded-lg border border-white/10 bg-black/20 px-4 py-3 text-sm font-semibold text-gray-600 sm:py-2"
+                      <a
+                        href="https://www.linkedin.com/in/mohamed-sangare-544928271"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center justify-center rounded-lg border border-white/10 bg-black/20 px-4 py-3 text-sm font-semibold transition duration-300 hover:-translate-y-0.5 hover:border-blue-500/50 hover:text-blue-400 sm:py-2"
                       >
-                        LinkedIn bientôt disponible
-                      </button>
+                        LinkedIn ↗
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -744,6 +765,7 @@ function Home() {
         </section>
       </main>
 
+      {/* FOOTER */}
       <footer className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-gray-500 sm:px-6 md:flex-row md:items-center md:justify-between">
           <p>
@@ -761,6 +783,10 @@ function Home() {
     </div>
   );
 }
+
+/* =========================
+   ANIMATIONS AU SCROLL
+========================= */
 
 function Reveal({
   children,
@@ -812,7 +838,14 @@ function Reveal({
   );
 }
 
-function DesktopNavLink({ href, children }) {
+/* =========================
+   NAVIGATION
+========================= */
+
+function DesktopNavLink({
+  href,
+  children,
+}) {
   return (
     <a
       href={href}
@@ -838,6 +871,10 @@ function MobileNavLink({
     </a>
   );
 }
+
+/* =========================
+   PARCOURS
+========================= */
 
 function TimelineItem({
   active = false,
@@ -880,6 +917,10 @@ function TimelineItem({
     </div>
   );
 }
+
+/* =========================
+   CONTACT
+========================= */
 
 function ContactInfo({
   label,
