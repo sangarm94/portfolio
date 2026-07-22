@@ -8,11 +8,117 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+
   background-color: #080b12;
   color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  overflow-x: hidden;
 }
 
 * {
   box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.35);
+  color: white;
+}
+
+/* =========================
+   ANIMATION HERO
+========================= */
+
+.hero-animation {
+  opacity: 0;
+  transform: translateY(24px);
+
+  animation: heroReveal 0.75s ease forwards;
+}
+
+.hero-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.hero-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.hero-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.hero-delay-4 {
+  animation-delay: 0.4s;
+}
+
+.hero-delay-5 {
+  animation-delay: 0.5s;
+}
+
+.hero-delay-6 {
+  animation-delay: 0.6s;
+}
+
+.hero-delay-7 {
+  animation-delay: 0.7s;
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   ANIMATION AU SCROLL
+========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   ACCESSIBILITÉ
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-animation,
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
